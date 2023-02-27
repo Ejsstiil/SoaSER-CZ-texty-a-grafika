@@ -44,7 +44,9 @@ pak ![image](https://user-images.githubusercontent.com/36369441/221620728-e3d618
 pak klikni na název staženého modu a potom ![image](https://user-images.githubusercontent.com/36369441/221620861-f8e12dcb-1848-4ce1-9a22-85861001545c.png)
 
 a pak ![image](https://user-images.githubusercontent.com/36369441/221620956-c9c9c6d7-1f3f-4b66-a3b5-57554faf8070.png)
-
+<br/>
+<br/>
+a nakonec je dobré hru restartovat, odstraní to špatně načtený český font.
  
 
 
