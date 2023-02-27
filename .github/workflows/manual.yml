@@ -44,6 +44,6 @@ jobs:
           ls -lhar
           cd "$NEWDIR"
           ls -lhar
-          cd "$NEWDIR"/Movie
+          cd ./Movie
           ls -lhar
           
