@@ -40,8 +40,9 @@ jobs:
           mv "CZ texty a grafika" "$NEWDIR"
           cp ./LICENSE "$NEWDIR"/
           cp ./README.md "$NEWDIR"/
-          ls -lar
+          ls -lhar
           cd "$NEWDIR"
-          ls -lar
-          
+          ls -lhar
+          cd "$NEWDIR"/Movie
+          ls -lhar
           
