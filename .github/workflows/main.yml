@@ -1,0 +1,45 @@
+name: Release CZ texty a grafika
+
+on:
+  push:
+#    branches:
+#      - main
+#    paths:
+#      - 'CZ texty a grafika/**'
+    tags:
+      - '*'
+
+jobs:
+  tagged-release:
+    name: "Release CZ texty a grafika"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+
+      - name: "Checkout source code"
+        uses: "actions/checkout@v3"
+        with:
+          fetch-depth: 0
+
+      - name: GetVersion
+        id: getversion
+        run: echo "version=$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
+
+      - name: Zip "CZ texty a grafika"
+        run: |
+          NEWDIR="Ejsstiil's CZ texty a grafika ${{ steps.getversion.outputs.version }}"
+          mv "CZ texty a grafika" "$NEWDIR"
+          cp ./LICENSE "$NEWDIR"/
+          cp ./README.md "$NEWDIR"/
+          zip -r "CZ-texty-${{ steps.getversion.outputs.version }}.zip" "$NEWDIR"/
+
+      - name: "Create a Release"
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            *.zip
+
+

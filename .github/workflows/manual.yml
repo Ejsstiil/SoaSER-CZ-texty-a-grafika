@@ -1,0 +1,47 @@
+name: Manual Release CZ texty a grafika
+
+on:
+#  push:
+#    branches:
+#      - main
+#    paths:
+#      - 'CZ texty a grafika/**'
+#    tags:
+#      - '*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag'
+        required: true
+        type: string
+        default: 'v1.'
+
+
+jobs:
+  release_new_tag:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+
+      - name: "Checkout source code"
+        uses: "actions/checkout@v3"
+        with:
+          #ref: ${{ inputs.tag }}
+          fetch-depth: 0
+
+      - name: GetVersion
+        id: getversion
+        run: echo "version=$(git describe --tags --abbrev=0)" >> $GITHUB_OUTPUT
+
+      - name: Zip "CZ texty a grafika"
+        run: |
+          NEWDIR="Ejsstiil's CZ texty a grafika ${{ steps.getversion.outputs.version }}"
+          mv "CZ texty a grafika" "$NEWDIR"
+          cp ./LICENSE "$NEWDIR"/
+          cp ./README.md "$NEWDIR"/
+          ls -lar
+          cd "$NEWDIR"
+          ls -lar
+          
+          
