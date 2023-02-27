@@ -1,4 +1,4 @@
-# Čeština, grafika jako mod
+# Čeština a grafika jako mod
 Přepracovaná čeština do hry Sins of a Solar Empire: Rebelion (v1.975)
 
 Původní češtinu vytvořila FreyaGroup - Petr Salak & Martin Kobath a můžete ji nalézt [zde](https://prekladyher.eu/preklady/sins-of-a-solar-empire-rebellion-v1-97.258/).
