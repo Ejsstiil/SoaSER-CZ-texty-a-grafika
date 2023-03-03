@@ -20447,7 +20447,7 @@ StringInfo
 	Value "Záře(bloom) povolen"
 StringInfo
 	ID "IDSOptionsScreenEffectOptionsIsShipBrighteningEnabled"
-	Value "Filtr zvýraznění modelu modi"
+	Value "Filtr zvýraznění modelu lodi"
 StringInfo
 	ID "IDSOptionsScreenEffectOptionsExhaustTrailDetail"
 	Value "Detail výfukové stopy"
